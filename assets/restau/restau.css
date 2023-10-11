@@ -1,0 +1,99 @@
+/* .acc {
+    background-color: #023232;
+}
+
+.pho {
+    width: 2500px;
+} */
+
+.formul {
+    text-decoration: underline;
+    text-align: center;
+    color: #0b021f;
+}
+
+/* Style du formulaire */
+#reservation-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #0b021f;
+    background: linear-gradient(to bottom right, #007BFF, #00b39e); /* Arrière-plan d'image radiante */
+    border-radius: 5px;
+}
+
+  
+  /* Style pour les étiquettes */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style pour les champs de texte et d'email */
+  input[type="text"],
+  input[type="date"],
+  input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Style pour les boutons */
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+/* Style des éléments de formulaire */
+select, input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style du bouton */
+button {
+    background-color: #0b021f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: cyan;
+}
+
+/* Style du prix total */
+#prix-total {
+    font-weight: bold;
+    font-size: 24px;
+    color: #007bff;
+    margin-top: 10px;
+}

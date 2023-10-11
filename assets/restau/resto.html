@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire de Réservation</title>
+    <link rel="stylesheet" href="restau.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+</head>
+<body>
+    <h1 class="formul">Formulaire de Réservation</h1>
+    
+    
+    <form id="reservation-form">
+
+
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+
+        <label for="date-naissance">Date de Naissance :</label>
+        <input type="date" id="date-naissance" name="date-naissance" required>
+
+        <label for="email">Adresse E-mail :</label>
+        <input type="email" id="email" name="email" required>
+
+
+        <label for="transport">Transport :</label>
+        <select id="transport">
+            <option value="0">Pas de transport</option>
+            <option value="10000">Transport simple</option>
+            <option value="15000">Transport bus climatisé</option>
+            <option value="20000">Transport individuel</option>
+        </select>
+        
+        <label for="logement">Logement :</label>
+        <select id="logement">
+            <option value="0">Pas de logement</option>
+            <option value="2000">Logement tente</option>
+            <option value="5000">Logement cabane</option>
+            <option value="10000">Logement Airbnb</option>
+            <option value="25000">Logement hotel sans piscine</option>
+            <option value="35000">Logement hotel avec piscine</option>
+        </select>
+        
+        <label for="nourriture">Nourriture :</label>
+        <select id="nourriture">
+            <option value="0">Pas de nourriture</option>
+            <option value="3000">Un seul repas/jour</option>
+            <option value="5000">Deux repas/jour</option>
+            <option value="7000">Trois repas/jour</option>
+            <option value="10000">Service hotel</option>
+        </select>
+        
+        <label for="nombre-personnes">Nombre de Personnes (gratuit pour les moins de cinq ans) :</label>
+        <input type="number" id="nombre-personnes" min="1" value="1">
+        
+
+        <label for="nombre-jours">Nombre de Jours :</label>
+        <input type="number" id="nombre-jours" min="1" value="1">
+        
+        <p>Prix Total : <span id="prix-total">0</span> FCFA</p>
+        
+        <button type="button" onclick="calculerPrix()">Calculer le Prix</button>
+        <button id="telecharger-facture" onclick="telechargerFacture()">Télécharger la Facture</button>
+
+        <button type="button">payer votre facture </button>
+
+    </form>
+
+    <script>
+
+function calculerPrix() {
+    // Récupération de la valeur sélectionnée dans l'élément avec l'ID "transport" et conversion en nombre à virgule flottante (float).
+    const transport = parseFloat(document.getElementById("transport").value);
+
+    // Récupération de la valeur sélectionnée dans l'élément avec l'ID "logement" et conversion en nombre à virgule flottante (float).
+    const logement = parseFloat(document.getElementById("logement").value);
+
+    // Récupération de la valeur sélectionnée dans l'élément avec l'ID "nourriture" et conversion en nombre à virgule flottante (float).
+    const nourriture = parseFloat(document.getElementById("nourriture").value);
+
+    // Récupération du nombre de personnes à partir de l'élément avec l'ID "nombre-personnes" et conversion en nombre entier (integer).
+    const nombrePersonnes = parseInt(document.getElementById("nombre-personnes").value);
+
+    // Récupération du nombre de jours à partir de l'élément avec l'ID "nombre-jours" et conversion en nombre entier (integer).
+    const nombreJours = parseInt(document.getElementById("nombre-jours").value);
+
+    // Calcul du prix total en multipliant la somme des coûts de transport, de logement et de nourriture par le nombre de personnes et le nombre de jours.
+    // Ensuite, on soustrait le coût pour les enfants gratuits en multipliant par le nombre d'enfants gratuits.
+    const prixTotal = (transport + logement + nourriture) * nombrePersonnes * nombreJours - ( (transport + logement + nourriture) * nombreJours);
+
+    // Mise à jour de l'élément avec l'ID "prix-total" pour afficher le prix total en FCFA.
+    document.getElementById("prix-total").textContent = prixTotal + " FCFA";
+}
+
+function telechargerFacture() {
+    // Récupérez les informations nécessaires pour la facture, comme le prix total.
+    const prixTotal = parseFloat(document.getElementById("prix-total").textContent);
+
+    // Créez un élément <a> pour le téléchargement de la facture.
+    const link = document.createElement("a");
+
+    // Générez le contenu de la facture, par exemple au format texte.
+    const contenuFacture = `Facture\n\nPrix Total : ${prixTotal} FCFA`;
+
+    // Créez un objet Blob (Binary Large Object) pour stocker le contenu de la facture.
+    const blob = new Blob([contenuFacture], { type: "application/pdf" });
+
+    // Créez un objet URL à partir du Blob.
+    const url = URL.createObjectURL(blob);
+
+    // Configurez l'élément <a> pour le téléchargement de la facture.
+    link.href = url;
+    link.download = "facture.pdf"; // Nom du fichier de la facture
+    link.style.display = "none";
+
+    // Ajoutez l'élément <a> à la page.
+    document.body.appendChild(link);
+
+    // Cliquez sur l'élément <a> pour déclencher le téléchargement de la facture.
+    link.click();
+
+    // Supprimez l'élément <a> de la page.
+    document.body.removeChild(link);
+
+    // Révoquez l'URL de l'objet Blob pour libérer les ressources.
+    URL.revokeObjectURL(url);
+}
+
+    </script>
+
+
+</body>
+</html>

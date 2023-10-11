@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+
+body {
+    font-family: "Manrope", sans-serif;
+}
+
+/* Bg */
+.bg-2 {
+    background-color: #121212;
+}
+
+/* Border Custom */
+.border-custom {
+    border: 1px solid #444;
+    transition: all 0.4s ease-in-out;
+}
+
+.border-custom:hover {
+    border-color: var(--bs-blue);
+}
+
+ /* Styles pour la bannière promotionnelle */
+ .promotion-banner {
+    display: none; /* Masquer la bannière par défaut */
+    background: linear-gradient(to bottom right, #007BFF, #7db300); /* Arrière-plan d'image radiante */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Texte centré */
+    border-bottom: 5px solid rgb(221, 255, 0);
+    width: 100%;
+}
+
+/* Styles pour le bouton "Fermer" */
+.close-button {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(221, 255, 0);
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Styles pour le compteur */
+.countdown {
+    font-weight: bold;
+}
+
+.dim {
+    background-color: red;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 8px;
+}
+
+
+/* Navbar */
+.navbar {
+    --bs-navbar-nav-link-padding-x: 1.2rem;
+}
+
+/* Btns */
+.btn {
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+/* Service */
+.icon {
+    width: 60px;
+    height: 60px;
+    background-color: #555;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+
+.icon:hover {
+    background-color: var(--bs-blue);
+}
+
+.service:hover .icon {
+    background-color: var(--bs-blue);
+}
+                                    /*Endroit a visiter*/
+
+.endroit {
+    background-color: #17014f;
+}             
+
+
+/* Swiper */
+.swiper-pagination-bullet {
+    background-color: rgb(7, 248, 236);
+}
+
+/* Project */
+.project {
+    position: relative;
+    background-color: rgba(165, 253, 248, 0.077);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.project .overlay {
+    padding: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(60px);
+     background-color: #00b3ff62;
+     border: 1px cyan solid;
+}
+
+.project:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+                                    /*pas encore touché*/
+/* Review */
+
+
+/* .review img {
+    width: 90px;
+    border-radius: 100px;
+} */
+
+/* Team */
+/* .team-member .divider {
+    background-color: #555;
+    height: 1px;
+}
+
+.team-member .links .icon {
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    background-color: transparent;
+    border: 1px solid #555;
+}
+
+.team-member .links .icon:hover {
+    background-color: var(--bs-blue);
+    border-color: var(--bs-blue);
+} */
+
+/* Contact */
+/* #contact .form-control {
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 0;
+    padding: 10px;
+    color: white;
+}
+
+
+
+/* Footer */
+/* footer ul {
+    padding: 0;
+}
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    color: var(--bs-body);
+} */
+
+/* Scroll to top */
+.scroll-to-top {
+    text-decoration: none;
+    border-radius: 100px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    background-color: #53cbaf;
+    color: #0c0854;
+}
+
+.scroll-to-top:hover {
+    color: rgb(3, 223, 252);
+    background-color: #ffffff;
+}
+
+
+
+                    /*section 1   la premiere partie*/
+
+
+
+.dox {
+    padding: 8px 30px;
+    text-decoration: 0;
+    font-size: 20px;
+    color: #53cbaf;
+    transition: 0.5s;
+    position: relative;
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    /* transition: font-size 0.3s ease; */
+    transform: rotate(0deg); /* Rotation initiale de 0 degrés */
+    transition: transform 0.9s ease; /* Ajoute une transition à la propriété de transformation */
+}
+
+/* Style du texte agrandi lorsque le curseur est dessus */
+.dox:hover {
+    /* font-size: 24px; Augmente la taille de police lorsqu'on passe le curseur dessus */
+    transform: rotate(5deg); /* Inclinaison de 30 degrés lorsqu'on passe le curseur dessus */
+}
+
+/*le nav bar*/
+
+.nb {
+    background-color: #030a5b;
+}
+.left .wlcm {
+    font-size:60px;
+}
+/*
+header h4:hover::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    height: 15px;
+    width: 15px;
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+header h4:hover::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    height: 15px;
+    width: 15px;
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+
+header {
+    padding: 0 10%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: animation2 2s linear;
+
+}
+header a {
+    padding: 8px 30px;
+    text-decoration: 0;
+    font-size: 12px;
+    border: 2px solid #53cbaf;
+    color: #53cbaf;
+    transition: 0.5s;
+    position: relative;
+}
+header a:hover::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    height: 15px;
+    width: 15px;
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+header a:hover::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    height: 15px;
+    width: 15px;
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+header a:hover {
+    background-color: #53cbaf;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    transform: rotate(10deg);
+    color: #fff;
+}*/
+
+
+                                    /*Cadre des 4 images*/
+.home {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 80px);
+}
+.left_right {
+    padding: 0% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left {
+    width: 45%;
+    animation-delay: 1s;
+    animation: animation1 2s linear;
+}
+
+.left span {
+    color: #53cbaf;
+    font-size: 12px;
+}
+.left h1 {
+    color: #fff;
+    margin: 20px 0;
+    font-size: 35px;
+    animation-delay: 2s;
+    animation: animation1 2s linear;
+
+}
+.left p {
+    color: #999;
+    font-size: 16px;
+}
+.left .buttons {
+    margin: 30px 0;
+    animation-delay: 3s;
+    animation: animation1 2s linear;
+}
+.left .buttons a {
+    padding: 8px 30px;
+    text-decoration: 0;
+    font-size: 12px;
+}
+.buttons a:first-child {
+    border: 2px  solid #53cbaf;
+    color: #53cbaf;
+    margin-left: 10px;
+}
+
+.buttons a:first-child:hover{
+    background-color: #53cbaf;
+    color: #d9fafa;
+}
+
+.buttons a:last-child {
+    border: 2px  solid #53cbaf;
+    color: #53cbaf;
+    margin-left: 10px;
+
+}
+
+.buttons a:last-child:hover{
+    background-color: #53cbaf;
+    color: #d9fafa;
+}
+
+.res {
+    background-color: #53cbaf;
+    color: #0c0854;
+    border: 2px solid #53cbaf;
+    margin-left: 10px;
+}
+
+.res:hover {
+    background-color: #0c0854;
+    color: #dffff7;
+}
+
+.right {
+    width: 40%;
+    perspective: 1000px;
+    
+}
+.right img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: 0.5s;
+    transform-style:preserve-3d;
+    border-radius: 50%;
+    animation-delay: 2s;
+    animation: animation1 2s linear;
+}
+.right img:hover {
+    transform: rotateY(360deg);
+}
+
+/*Animations*/
+
+@keyframes animation1 {
+    from{
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes animation2 {
+    from {
+        transform: translateY(-100px);
+    }
+}
+
+
+.cadre {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0px 0px 40px rgba(69, 237, 189, 0.2);
+    justify-self: end;
+}
+
+
+.image {
+    width: 250px;
+    height: 200px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+    /* from {
+        transform: translateY(-100px);
+    } */
+}
+
+
+
+/*  des règles CSS pour la responsivité */
+@media (max-width: 768px) {
+    /* Styles pour les écrans plus petits (tablette et mobile) */
+    
+    .left_right {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+  }
+  
+  
+                                /*La barre de section niveau servies */
+                                            /*Pour les formules*/
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease-in-out;
+    height: 400px;
+}
+
+.silver {
+    box-shadow: 5px 10px 10px rgb(58, 6, 104);
+}
+
+.gold {
+    box-shadow: 5px 10px 10px rgb(210, 185, 59);
+}
+
+.bronze {
+    box-shadow: 5px 10px 10px rgb(13, 52, 3);
+}
+
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.bron {
+    background-color: rgb(13, 52, 3, 0.5);
+}
+
+.silv {
+    background-color: rgb(58, 6, 104, 0.5);
+}
+
+.gol {
+    background-color: rgb(210, 185, 59, 0.5);
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+
+}
+
+.image-container:hover img {
+    transform: scale(0.5);
+    transition: transform 0.9s ease-in-out;
+    
+}
+
+.visite {
+    font-size: 20px;
+    color: #fff;
+}
+ 
+.pic {
+    width: 25px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#insta-section {
+    position: relative;
+    width: 1365px;
+    background-color: #faedfa;
+}
+
+#insta-section .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#insta-section img {
+    width: 1365px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+

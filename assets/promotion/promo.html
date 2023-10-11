@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promotion</title>
+    <style>
+        /* Styles pour la bannière promotionnelle */
+        .promotion-banner {
+            display: none; /* Masquer la bannière par défaut */
+            background-color: #f0ad4e; /* Couleur de fond jaune */
+            color: #fff; /* Couleur du texte blanc */
+            padding: 10px; /* Espacement intérieur */
+            text-align: center; /* Texte centré */
+        }
+
+        /* Styles pour le bouton "Fermer" */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Styles pour le compteur */
+        .countdown {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="promotion-banner" id="promotionBanner">
+        Profitez de notre promotion spéciale ! Offre valable jusqu'au <span class="countdown" id="countdown"></span>.
+        <span class="close-button" id="closeButton">Fermer</span>
+    </div>
+
+    <script>
+        // Afficher la bannière promotionnelle
+        document.getElementById("promotionBanner").style.display = "block";
+
+        // Date de fin de la promotion (modifiable selon vos besoins)
+        const promotionEndDate = new Date("2023-12-31 23:59:59").getTime();
+
+        // Fonction pour mettre à jour le compteur
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = promotionEndDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("promotionBanner").style.display = "none";
+            }
+        }
+
+        // Mettre à jour le compteur toutes les secondes
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Gestionnaire d'événements pour le bouton "Fermer"
+        document.getElementById("closeButton").addEventListener("click", function () {
+            clearInterval(countdownInterval); // Arrêter la mise à jour du compteur
+            document.getElementById("promotionBanner").style.display = "none"; // Cacher la bannière
+        });
+
+        // Appel initial pour afficher le compteur
+        updateCountdown();
+    </script>
+</body>
+</html>
